@@ -1,0 +1,14 @@
+{
+  "name": "@utility/type-script",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "yarn tsc --build"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "typescript": "^4.6.2"
+  }
+}

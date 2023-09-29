@@ -1,4 +1,5 @@
 
+import { SERVER_URL } from "@/config";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState: any[] = [];
@@ -6,7 +7,7 @@ const initialState: any[] = [];
 
 const sayTest = async () => {
   try {
-    const response = await fetch('http://localhost:3000');
+    const response = await fetch(SERVER_URL);
     const test = await response.text();
     console.log(response);
     console.log(test);

@@ -1,9 +1,11 @@
+import { SERVER_URL } from '@/config'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+
 export const api = createApi({
   reducerPath: 'api',
-  tagTypes: ['test'],
+  tagTypes: ['test', 'config'],
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:3000"
+    baseUrl: SERVER_URL
   }),
   endpoints: builder => ({
     getTest: builder.query({
@@ -21,5 +23,4 @@ export const api = createApi({
 })
 
 
-//export const anyApi.injectEndpoints()
 export const { useGetTestQuery, useSetTestMutation } = api

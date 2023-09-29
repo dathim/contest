@@ -1,0 +1,43 @@
+{
+  "template": {
+    "style": {
+      "palette": {
+        "primary": {
+          "main": "#FF5733"
+        },
+        "secondary": {
+          "main": "#E0C2FF",
+          "light": "#F5EBFF",
+          "contrastText": "#47008F"
+        }
+      }
+    }
+  },
+  "registration": {
+    "title": "title",
+    "description": "description",
+    "enable": true,
+    "fields": [
+      {
+        "title": "Фамилия",
+        "dataType": "string",
+        "required": true
+      },
+      {
+        "title": "Фамилия",
+        "dataType": "string",
+        "required": true
+      },
+      {
+        "title": "Дата роджения",
+        "dataType": "date",
+        "required": true
+      },
+      {
+        "title": "Рост см",
+        "dataType": "number",
+        "required": true
+      }
+    ]
+  }
+}

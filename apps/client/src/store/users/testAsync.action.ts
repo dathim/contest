@@ -31,7 +31,7 @@ export const testAsync = createSlice({
   }
 })
 
-export const { actions, reducer } = testAsync
+export const { actions, reducer: testAsyncReducer } = testAsync
 
 
 

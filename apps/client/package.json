@@ -17,6 +17,7 @@
     "@reduxjs/toolkit": "^1.9.6",
     "@utility/config": "1.0.0",
     "@utility/type-script": "1.0.0",
+    "@utility/helpers": "1.0.0",
     "graphql": "^16.8.1",
     "markdown-to-jsx": "^7.3.2",
     "react": "^18.2.0",

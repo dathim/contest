@@ -13,4 +13,4 @@ export const usersSlice = createSlice({
   }
 })
 
-export const { actions, reducer } = usersSlice
+export const { actions: userActions, reducer: userReducer } = usersSlice

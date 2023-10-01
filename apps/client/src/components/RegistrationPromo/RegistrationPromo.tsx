@@ -1,12 +1,19 @@
-import * as React from 'react';
 import PropTypes from 'prop-types';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
-
+import { useActions } from '@/hooks/useActions';
+import { ModalType } from '../Modals/Modals';
 function MainFeaturedPost() {
+  const { openModal } = useActions();
+
+  const openModalHandler = () => {
+    console.log('Open modal');
+    openModal(ModalType.REGISTRATION);
+  };
+
   return (
     <Paper
       sx={{
@@ -49,7 +56,7 @@ function MainFeaturedPost() {
             <Typography variant="h5" color="inherit" paragraph>
               Описание
             </Typography>
-            <Link variant="subtitle1" href="#">
+            <Link onClick={openModalHandler} variant="subtitle1">
               Регистрация
             </Link>
           </Box>

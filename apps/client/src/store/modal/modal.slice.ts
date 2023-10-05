@@ -7,10 +7,15 @@ const initialState: IModal[] = [];
 
 export const modalSlice = createSlice({
   name: 'modal',
-  initialState,
+  initialState: initialState,
   reducers: {
     openModal: (state, { payload }) => {
       state.push({ id: Randoms.uniqueId(), type: payload })
+    },
+    closeModal: (state, action) => {
+      {
+        return state.filter((modals: IModal) => modals.id !== action.payload)
+      }
     }
   }
 })

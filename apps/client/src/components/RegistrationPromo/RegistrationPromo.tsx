@@ -10,7 +10,6 @@ function MainFeaturedPost() {
   const { openModal } = useActions();
 
   const openModalHandler = () => {
-    console.log('Open modal');
     openModal(ModalType.REGISTRATION);
   };
 

@@ -28,6 +28,7 @@ export const Form = ({ formData, onSubmit }: IForm) => {
       {fields.map((field: IFormField) => {
         return (
           <FormField
+            key={field.fieldName}
             field={field}
             value={field.value ?? ''}
             onChange={onFieldChange}

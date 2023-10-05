@@ -1,6 +1,7 @@
 import { IFormField } from '@utility/type-script';
 import style from './Form.module.scss';
 import { FormField } from './FormField';
+import React, { useState } from 'react';
 
 export interface IForm {
   formData: IFormField[];
@@ -8,20 +9,32 @@ export interface IForm {
 }
 
 export const Form = ({ formData, onSubmit }: IForm) => {
-  console.log(formData, onSubmit);
+  let [fields, setFields] = useState([...formData]);
+
+  const onSubmitHandler = (e: React.FormEvent) => {
+    e.preventDefault();
+  };
+
+  const onFieldChange = (key: string, value: string) => {
+    fields[fields.findIndex((field) => field.fieldName === key)] = {
+      ...fields[fields.findIndex((field) => field.fieldName === key)],
+      value: value,
+    };
+    setFields([...fields]);
+  };
 
   return (
-    <div className={style.form}>
-      {formData.map((field: IFormField) => {
+    <form onSubmit={onSubmitHandler} className={style.form}>
+      {fields.map((field: IFormField) => {
         return (
           <FormField
             field={field}
-            onChange={() => {
-              console.log('onChange');
-            }}
+            value={field.value ?? ''}
+            onChange={onFieldChange}
           />
         );
       })}
-    </div>
+      <button type="submit">Зарегистрироваться</button>
+    </form>
   );
 };

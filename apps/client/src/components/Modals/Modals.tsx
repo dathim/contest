@@ -28,7 +28,10 @@ export const Modals = () => {
 
   const currentModal = (
     <div className={styles.modal} id="modal" onClick={closeModalHandler}>
-      <div onClick={(e) => e.stopPropagation()}>
+      <div
+        className={styles['center-block']}
+        onClick={(e) => e.stopPropagation()}
+      >
         {modalsData[0].type === ModalType.REGISTRATION && (
           <Registration {...modalsData[0]} />
         )}

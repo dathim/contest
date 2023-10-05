@@ -4,4 +4,16 @@
   inline-size: 100vw;
   block-size: 100vh;
   z-index: 10;
+
+  .center-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    border-radius: 12px;
+    padding: 16px 32px 24px 32px;
+    background-color: white;
+    box-shadow: 0px 2px 24px #383838;
+  }
 }

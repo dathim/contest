@@ -19,21 +19,25 @@
     "enable": true,
     "fields": [
       {
+        "fieldName": "name",
+        "title": "Имя",
+        "dataType": "string",
+        "required": true
+      },
+      {
+        "fieldName": "Surname",
         "title": "Фамилия",
         "dataType": "string",
         "required": true
       },
       {
-        "title": "Фамилия",
-        "dataType": "string",
-        "required": true
-      },
-      {
-        "title": "Дата роджения",
+        "fieldName": "birthday",
+        "title": "Дата рождения",
         "dataType": "date",
         "required": true
       },
       {
+        "fieldName": "height",
         "title": "Рост см",
         "dataType": "number",
         "required": true

@@ -41,6 +41,24 @@
         "title": "Рост см",
         "dataType": "number",
         "required": true
+      },
+      {
+        "fieldName": "photo",
+        "title": "фото",
+        "dataType": "file-image",
+        "required": true
+      },
+      {
+        "fieldName": "email",
+        "title": "Email",
+        "dataType": "string",
+        "required": true
+      },
+      {
+        "fieldName": "password",
+        "title": "Пароль",
+        "dataType": "password",
+        "required": true
       }
     ]
   }

@@ -1,5 +1,5 @@
 import { useActions, useAppSelector } from '@/hooks/useActions';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { Registration } from './Registration/Registration';
 import styles from './Modals.module.scss';

@@ -11,6 +11,7 @@ export enum IFieldDataType {
   NUMBER = "number",
   DROPDOWN = 'dropdown',
   DATE = "date",
-  FILE = "file",
-  FILES = "files"
+  FILE_IMAGE = "file-image",
+  FILES = "files",
+  PASSWORD = "password"
 }

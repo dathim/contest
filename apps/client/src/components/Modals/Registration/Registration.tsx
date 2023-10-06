@@ -1,9 +1,10 @@
 import Fade from '@mui/material/Fade';
-import { Box, Theme } from '@mui/system';
+import { Box } from '@mui/system';
 import { Form } from '@/components/Form/Form';
 import { useGetConfigQuery } from '@/store/api/config.api';
 import { IFormField } from '@utility/type-script';
 import style from './Registration.module.scss';
+import { useAppSelector } from '@/hooks/useActions';
 
 export interface IRegistration {
   id: string;

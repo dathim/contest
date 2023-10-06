@@ -26,6 +26,7 @@ export const FormField = ({ value, field, onChange }: IFormFieldProps) => {
               className={style['form-field']}
               name={field.fieldName}
               onChange={(e) => onChangeHandler(e.target.value)}
+              value={value}
             />
           )}
           {field.dataType === IFieldDataType.DATE && (
@@ -33,6 +34,7 @@ export const FormField = ({ value, field, onChange }: IFormFieldProps) => {
               className={style['form-field']}
               name={field.fieldName}
               onChange={(e) => onChangeHandler(e.target.value)}
+              value={value}
             />
           )}
           {field.dataType === IFieldDataType.NUMBER && (
@@ -40,6 +42,26 @@ export const FormField = ({ value, field, onChange }: IFormFieldProps) => {
               className={style['form-field']}
               name={field.fieldName}
               onChange={(e) => onChangeHandler(e.target.value)}
+              value={value}
+            />
+          )}
+          {field.dataType === IFieldDataType.PASSWORD && (
+            <Input
+              className={style['form-field']}
+              type="password"
+              name={field.fieldName}
+              onChange={(e) => onChangeHandler(e.target.value)}
+              value={value}
+            />
+          )}
+
+          {field.dataType === IFieldDataType.FILE_IMAGE && (
+            <Input
+              className={style['form-field']}
+              type="file"
+              name={field.fieldName}
+              onChange={(e) => onChangeHandler(e.target.value)}
+              value={value}
             />
           )}
           {filled && !focused && <OkMark>✔</OkMark>}

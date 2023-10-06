@@ -6,7 +6,7 @@ export const configApi = api.injectEndpoints({
     getConfig: builder.query({
       query: () => 'config',
       transformResponse: (response: ConfigType) => response,
-      providesTags: () => [{ type: "config" }]
+      // providesTags: () => [{ type: "config" }]
     }),
   })
 })

@@ -6,35 +6,28 @@ import { useActions, useAppSelector } from '@/hooks/useActions';
 
 export interface IForm {
   formData: IFormField[];
-  onSubmit(): void;
+  onSubmit(fields: IFormField[]): void;
+  onFieldChange(field: IFormField): void;
 }
 
-export const Form = ({ formData }: IForm) => {
-  const registrationData = useAppSelector(
-    (state) => state.profile.registration
-  );
-
-  let [fields, setFields] = useState<IFormField[]>([
-    ...new Map(
-      [...formData, ...registrationData].map((field: IFormField) => {
-        return [field.fieldName, field];
-      })
-    ).values(),
-  ]);
-
-  const { setRegistrationData } = useActions();
+export const Form = ({ formData, onSubmit, onFieldChange }: IForm) => {
+  let [fields, setFields] = useState<IFormField[]>(formData);
 
   const onSubmitHandler = (e: React.FormEvent) => {
+    console.log('onSubmitHandler');
     e.preventDefault();
+    onSubmit(fields);
   };
 
-  const onFieldChange = (key: string, value: string) => {
+  const onFieldChangeHandler = (key: string, value: string) => {
     const updateIndex = fields.findIndex((field) => field.fieldName === key);
     fields[updateIndex] = {
       ...fields[updateIndex],
       value: value,
     };
-    setRegistrationData(fields[updateIndex]);
+    onFieldChange(fields[updateIndex]);
+    ///
+    onFieldChange;
     setFields([...fields]);
   };
 
@@ -46,7 +39,7 @@ export const Form = ({ formData }: IForm) => {
             key={field.fieldName}
             field={field}
             value={field.value ?? ''}
-            onChange={onFieldChange}
+            onChange={onFieldChangeHandler}
           />
         );
       })}
